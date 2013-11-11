@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     
   s.name         = "HCObjectSwitch"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "A simple way to implement object based switch-like statements in Objective-C using blocks."
     
   s.description  = <<-DESC
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.7'
     
-  s.source       = { :git => "https://github.com/hypercrypt/HCObjectSwitch.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/hypercrypt/HCObjectSwitch.git", :tag => "1.1.0" }
     
   s.source_files  = 'HCObjectSwitch/*.{h,m}'
   s.public_header_files = 'HCObjectSwitch/*.{h}'

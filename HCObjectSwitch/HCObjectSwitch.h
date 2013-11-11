@@ -8,6 +8,12 @@
 
 #pragma once
 
+#define Switch(object)          [[HCObjectSwitch alloc] initWithObject:object]._actions = @
+#define Case(case)              case ?: [NSNull null] : ^(HCObjectSwitch *_objectSwitch_, id _object_)
+#define Default                 @"_HCObjectSwitchDefaultCase" : ^(HCObjectSwitch *_objectSwitch_, id _object_)
+#define FallthroughTo(case)     [_objectSwitch_ _fallthroughToCase:case]
+#define FallthroughToDefault()  [_objectSwitch_ _fallthroughToDefault]
+
 #import <Foundation/Foundation.h>
 
 @class HCObjectSwitch;
@@ -25,9 +31,3 @@ typedef void(^HCObjectSwitchBlock)(HCObjectSwitch *objectSwitch, id object);
 - (void)_fallthroughToDefault;
 
 @end
-
-#define Switch(object)          [[HCObjectSwitch alloc] initWithObject:object]._actions = @
-#define Case(case)              case : ^(HCObjectSwitch *_objectSwitch_, id _object_)
-#define Default                 @"_HCObjectSwitchDefaultCase" : ^(HCObjectSwitch *_objectSwitch_, id _object_)
-#define FallthroughTo(case)     [_objectSwitch_ _fallthroughToCase:case]
-#define FallthroughToDefault()  [_objectSwitch_ _fallthroughToDefault]

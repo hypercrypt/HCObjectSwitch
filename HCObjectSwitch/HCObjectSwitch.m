@@ -19,7 +19,7 @@ static id const HCObjectSwitchDefaultCase = @"_HCObjectSwitchDefaultCase";
 {
     self = [super init];
     
-    if (self)
+    if (self && (object != [NSNull null]))
     {
         _currentObject = object;
     }
